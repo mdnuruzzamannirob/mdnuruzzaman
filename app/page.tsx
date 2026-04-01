@@ -27,13 +27,13 @@ const itemVariants = {
 
 export default function Home() {
   return (
-    <div className="min-h-screen pt-20 pb-16 px-4 sm:px-8 flex flex-col relative overflow-hidden">
+    <div className="min-h-screen pt-20 pb-16 flex flex-col relative overflow-hidden">
       {/* Main Content */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="flex-1 max-w-4xl mx-auto w-full flex flex-col justify-center relative z-10"
+        className="flex-1 container-custom flex flex-col justify-center relative z-10"
       >
         {/* Heading with Glitch Effect */}
         <div className="relative mb-8 inline-block">
@@ -52,30 +52,22 @@ export default function Home() {
             Your friendly neighborhood frontend developer, UX architect, and
             JavaScript engineer. I spend my days (and often nights) painting the
             internet canvas with{' '}
-            <span className="font-semibold text-gray-900 dark:text-white">
-              PROJECTS
-            </span>{' '}
-            and lines of code, turning zeroes and ones into immersive,
-            interactive experiences.
+            <span className="font-semibold text-foreground">PROJECTS</span> and
+            lines of code, turning zeroes and ones into immersive, interactive
+            experiences.
           </p>
 
           <p className="leading-8.75">
             Bona fide photochromic{' '}
-            <span className="font-semibold text-gray-900 dark:text-white">
-              LENS
-            </span>{' '}
+            <span className="font-semibold text-foreground">LENS</span>{' '}
             enthusiast – sunlight or indoors, I&apos;ve got it covered. I tread
             the path of minimalism, finding beauty in simplicity and order. When
             I&apos;m not crafting beautiful web experiences, you can find me
             reading{' '}
-            <span className="font-semibold text-gray-900 dark:text-white">
-              ARTICLES
-            </span>{' '}
-            or swaying to the rhythm of Pop Music & Jazz, losing myself in the
+            <span className="font-semibold text-foreground">ARTICLES</span> or
+            swaying to the rhythm of Pop Music & Jazz, losing myself in the
             captivating flow of melodies. anyways you can{' '}
-            <span className="font-semibold text-gray-900 dark:text-white">
-              CONTACT ME
-            </span>
+            <span className="font-semibold text-foreground">CONTACT ME</span>
           </p>
         </motion.div>
 
@@ -83,7 +75,7 @@ export default function Home() {
         <motion.div variants={itemVariants}>
           <Link
             href="/about"
-            className="inline-flex items-center gap-2 text-gray-900 dark:text-white hover:gap-4 transition-all duration-300 font-medium group"
+            className="inline-flex items-center gap-2 text-foreground hover:gap-4 transition-all duration-300 font-medium group"
           >
             See More About Me
             <ArrowRight

@@ -89,12 +89,12 @@ const itemVariants = {
 
 export default function Blog() {
   return (
-    <div className="min-h-screen pt-24 pb-16 px-4 sm:px-8 flex flex-col">
+    <div className="min-h-screen pt-24 pb-16 flex flex-col">
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="flex-1 max-w-4xl mx-auto w-full flex flex-col"
+        className="flex-1 container-custom flex flex-col"
       >
         {/* Title */}
         <motion.h1
@@ -106,7 +106,7 @@ export default function Blog() {
 
         <motion.p
           variants={itemVariants}
-          className="text-lg text-gray-700 dark:text-gray-300 mb-12"
+          className="text-lg text-foreground/80 mb-12"
         >
           Thoughts on web development, design, and technology.
         </motion.p>
@@ -118,34 +118,34 @@ export default function Blog() {
               key={post.id}
               variants={itemVariants}
               whileHover={{ x: 8 }}
-              className="group p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 hover:bg-gray-50 dark:hover:bg-gray-900 transition-all duration-300"
+              className="group p-6 rounded-xl border border-foreground/10 bg-foreground/2 hover:bg-foreground/5 transition-all duration-300"
             >
               <Link href={`/blog/${post.slug}`} className="block">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-3">
-                      <span className="text-xs px-2 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-medium">
+                      <span className="text-xs px-2 py-1 rounded-full bg-foreground/10 text-foreground/70 font-medium">
                         {post.category}
                       </span>
-                      <span className="text-xs text-gray-600 dark:text-gray-400">
+                      <span className="text-xs text-foreground/60">
                         {post.readTime}
                       </span>
                     </div>
-                    <h2 className="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors mb-2">
+                    <h2 className="text-xl font-semibold text-foreground group-hover:text-foreground/80 transition-colors mb-2">
                       {post.title}
                     </h2>
                   </div>
                   <ArrowRight
                     size={20}
-                    className="text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors ml-4 shrink-0"
+                    className="text-foreground/40 group-hover:text-foreground transition-colors ml-4 shrink-0"
                   />
                 </div>
 
-                <p className="text-gray-700 dark:text-gray-400 mb-4 leading-relaxed">
+                <p className="text-foreground/70 mb-4 leading-relaxed">
                   {post.excerpt}
                 </p>
 
-                <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-500">
+                <div className="flex items-center gap-2 text-sm text-foreground/50">
                   <Calendar size={16} />
                   {post.date}
                 </div>

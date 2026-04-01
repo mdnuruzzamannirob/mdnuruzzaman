@@ -24,12 +24,12 @@ const itemVariants = {
 
 export default function About() {
   return (
-    <div className="min-h-screen pt-24 pb-16 px-4 sm:px-8 flex flex-col">
+    <div className="min-h-screen pt-24 pb-16 flex flex-col">
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="flex-1 max-w-4xl mx-auto w-full flex flex-col"
+        className="flex-1 container-custom flex flex-col"
       >
         {/* Title */}
         <motion.h1
@@ -42,10 +42,10 @@ export default function About() {
         {/* Content */}
         <motion.div variants={itemVariants} className="max-w-3xl space-y-6">
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-2xl font-semibold text-foreground mb-4">
               Frontend Developer & UX Architect
             </h2>
-            <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+            <p className="text-lg leading-relaxed text-foreground/80">
               With over years of experience in building web applications, I
               specialize in creating beautiful, intuitive user interfaces that
               delight users and drive business results. My approach combines
@@ -54,46 +54,38 @@ export default function About() {
           </div>
 
           <div className="space-y-4 pt-6">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-2xl font-semibold text-foreground mb-4">
               What I Do
             </h2>
-            <ul className="space-y-3 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+            <ul className="space-y-3 text-lg leading-relaxed text-foreground/80">
               <li className="flex items-start gap-3">
-                <span className="text-gray-900 dark:text-white font-semibold mt-1">
-                  •
-                </span>
+                <span className="text-foreground font-semibold mt-1">•</span>
                 <span>Design and develop responsive web applications</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-gray-900 dark:text-white font-semibold mt-1">
-                  •
-                </span>
+                <span className="text-foreground font-semibold mt-1">•</span>
                 <span>
                   Create engaging animations and interactive experiences
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-gray-900 dark:text-white font-semibold mt-1">
-                  •
-                </span>
+                <span className="text-foreground font-semibold mt-1">•</span>
                 <span>
                   Optimize applications for performance and accessibility
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-gray-900 dark:text-white font-semibold mt-1">
-                  •
-                </span>
+                <span className="text-foreground font-semibold mt-1">•</span>
                 <span>Collaborate with designers and product teams</span>
               </li>
             </ul>
           </div>
 
           <div className="space-y-4 pt-6">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-2xl font-semibold text-foreground mb-4">
               Skills & Technologies
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-gray-700 dark:text-gray-300">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-foreground/80">
               {[
                 'React',
                 'Next.js',
@@ -108,7 +100,7 @@ export default function About() {
                 <motion.div
                   key={skill}
                   variants={itemVariants}
-                  className="p-3 rounded-lg bg-gray-100 dark:bg-gray-900 text-center font-medium"
+                  className="p-3 rounded-lg bg-foreground/5 text-center font-medium text-foreground"
                 >
                   {skill}
                 </motion.div>
@@ -117,10 +109,10 @@ export default function About() {
           </div>
 
           <div className="space-y-4 pt-6">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-2xl font-semibold text-foreground mb-4">
               Outside of Work
             </h2>
-            <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+            <p className="text-lg leading-relaxed text-foreground/80">
               When I&apos;m not coding, you can find me exploring photography
               through my photochromic lenses (indoors or outdoors—I&apos;ve got
               it covered). I&apos;m a huge fan of minimalist design and love

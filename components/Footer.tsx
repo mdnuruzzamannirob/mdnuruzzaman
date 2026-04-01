@@ -36,7 +36,7 @@ export function Footer() {
             transition={{ duration: 0.5, delay: idx * 0.05 }}
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.9 }}
-            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+            className="text-foreground/60 hover:text-foreground transition-colors"
           >
             <Icon size={24} />
           </motion.a>

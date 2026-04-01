@@ -24,7 +24,7 @@ export function Header() {
     <header className="w-full z-50">
       <nav className="max-w-6xl mx-auto px-4 sm:px-8 py-4 flex items-center justify-between">
         {/* Logo */}
-        <div className="text-2xl font-bold text-gray-900 dark:text-white">
+        <div className="text-2xl font-bold text-foreground">
           <Link href="/">Adeneken</Link>
         </div>
 
@@ -34,7 +34,7 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="nav-link text-sm font-medium text-gray-700 dark:text-gray-200 relative"
+              className="nav-link text-sm font-medium text-foreground/80 hover:text-foreground relative"
             >
               {item.label}
             </Link>
@@ -44,7 +44,7 @@ export function Header() {
         {/* Theme Toggle */}
         <button
           onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-          className="p-2 text-gray-700 dark:text-gray-200 hover:opacity-60 transition-opacity"
+          className="p-2 text-foreground/80 hover:opacity-60 transition-opacity"
           aria-label="Toggle theme"
         >
           {mounted &&

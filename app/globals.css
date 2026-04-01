@@ -42,6 +42,10 @@ body {
   overflow-x: hidden;
 }
 
+button {
+  @apply cursor-pointer;
+}
+
 /* LIGHT MODE grid — dark lines, very subtle */
 body::before {
   content: '';
@@ -77,9 +81,7 @@ body::after {
   opacity: 0.1;
 }
 
-button {
-  @apply cursor-pointer;
-}
+
 
 @keyframes underline-expand {
   from {
@@ -99,11 +101,15 @@ button {
   bottom: -2px;
   left: 50%;
   width: 0;
-  height: 2px;
+  height: 1px;
   background-color: var(--foreground);
   transition: all 300ms ease;
 }
 
 .nav-link:hover::after {
   animation: underline-expand 300ms ease forwards;
+}
+
+.container-custom {
+  @apply max-w-5xl mx-auto w-full px-4 sm:px-8
 }

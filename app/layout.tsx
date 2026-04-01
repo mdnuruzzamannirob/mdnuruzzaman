@@ -31,8 +31,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-screen flex flex-col bg-white dark:bg-black text-gray-900 dark:text-gray-100 relative">
-        <div className="fixed inset-0 pointer-events-none z-0" />
+      <body className="min-h-screen flex flex-col bg-background text-foreground relative">
         <ThemeProvider>
           <Header />
           <main className="flex-1 relative z-10">{children}</main>

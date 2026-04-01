@@ -52,12 +52,12 @@ const itemVariants = {
 
 export default function Contact() {
   return (
-    <div className="min-h-screen pt-24 pb-16 px-4 sm:px-8 flex flex-col">
+    <div className="min-h-screen pt-24 pb-16 flex flex-col">
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="flex-1 max-w-4xl mx-auto w-full flex flex-col"
+        className="flex-1 container-custom flex flex-col"
       >
         {/* Title */}
         <motion.h1
@@ -69,7 +69,7 @@ export default function Contact() {
 
         <motion.p
           variants={itemVariants}
-          className="text-lg text-gray-700 dark:text-gray-300 mb-12"
+          className="text-lg text-foreground/80 mb-12"
         >
           Have a project in mind? Let&apos;s connect and create something
           amazing together.
@@ -88,18 +88,13 @@ export default function Contact() {
                 href={method.link}
                 variants={itemVariants}
                 whileHover={{ x: 8 }}
-                className="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 hover:bg-gray-50 dark:hover:bg-gray-900 transition-all duration-300"
+                className="p-6 rounded-xl border border-foreground/10 bg-foreground/2 hover:bg-foreground/5 transition-all duration-300"
               >
-                <Icon
-                  size={32}
-                  className="text-gray-900 dark:text-white mb-4"
-                />
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
+                <Icon size={32} className="text-foreground mb-4" />
+                <h3 className="font-semibold text-foreground mb-2">
                   {method.label}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  {method.value}
-                </p>
+                <p className="text-foreground/60 text-sm">{method.value}</p>
               </motion.a>
             )
           })}
@@ -107,7 +102,7 @@ export default function Contact() {
 
         {/* Contact Form */}
         <motion.div variants={itemVariants} className="mb-16">
-          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
+          <h2 className="text-2xl font-semibold text-foreground mb-6">
             Send me a message
           </h2>
           <form className="space-y-6">
@@ -115,29 +110,29 @@ export default function Contact() {
               <input
                 type="text"
                 placeholder="Your Name"
-                className="px-4 py-3 rounded-lg bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 text-gray-900 dark:text-white placeholder-gray-600 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-white transition-all"
+                className="px-4 py-3 rounded-lg bg-foreground/5 border border-foreground/10 text-foreground placeholder-foreground/40 focus:outline-none focus:ring-2 focus:ring-foreground/50 transition-all"
               />
               <input
                 type="email"
                 placeholder="Your Email"
-                className="px-4 py-3 rounded-lg bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 text-gray-900 dark:text-white placeholder-gray-600 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-white transition-all"
+                className="px-4 py-3 rounded-lg bg-foreground/5 border border-foreground/10 text-foreground placeholder-foreground/40 focus:outline-none focus:ring-2 focus:ring-foreground/50 transition-all"
               />
             </div>
             <input
               type="text"
               placeholder="Subject"
-              className="w-full px-4 py-3 rounded-lg bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 text-gray-900 dark:text-white placeholder-gray-600 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-white transition-all"
+              className="w-full px-4 py-3 rounded-lg bg-foreground/5 border border-foreground/10 text-foreground placeholder-foreground/40 focus:outline-none focus:ring-2 focus:ring-foreground/50 transition-all"
             />
             <textarea
               rows={6}
               placeholder="Your Message"
-              className="w-full px-4 py-3 rounded-lg bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 text-gray-900 dark:text-white placeholder-gray-600 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-white transition-all resize-none"
+              className="w-full px-4 py-3 rounded-lg bg-foreground/5 border border-foreground/10 text-foreground placeholder-foreground/40 focus:outline-none focus:ring-2 focus:ring-foreground/50 transition-all resize-none"
             ></textarea>
             <motion.button
               type="submit"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-black rounded-lg font-medium hover:shadow-lg transition-all"
+              className="w-full px-6 py-3 bg-foreground text-background rounded-lg font-medium hover:shadow-lg transition-all"
             >
               Send Message
             </motion.button>
@@ -146,7 +141,7 @@ export default function Contact() {
 
         {/* Social Links */}
         <motion.div variants={itemVariants} className="text-center">
-          <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
+          <h2 className="text-xl font-semibold text-foreground mb-6">
             Follow me on social media
           </h2>
           <div className="flex justify-center gap-6">
@@ -160,7 +155,7 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, y: -4 }}
                   whileTap={{ scale: 0.9 }}
-                  className="p-3 rounded-full bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
+                  className="p-3 rounded-full bg-foreground/10 text-foreground hover:bg-foreground hover:text-background transition-all"
                 >
                   <Icon size={24} />
                 </motion.a>
