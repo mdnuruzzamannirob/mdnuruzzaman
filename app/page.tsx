@@ -1,6 +1,5 @@
 'use client'
 
-import { Footer } from '@/components/Footer'
 import { GlitchText } from '@/components/GlitchText'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
@@ -28,24 +27,7 @@ const itemVariants = {
 
 export default function Home() {
   return (
-    <div className="min-h-screen pt-20 pb-16 px-4 sm:px-8 flex flex-col bg-white dark:bg-black relative overflow-hidden">
-      {/* Gradient backgrounds */}
-      <div className="absolute top-0 left-0 w-full h-full opacity-30 dark:opacity-20 pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-500/30 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-      </div>
-
-      {/* Grid background */}
-      <div
-        className="absolute inset-0 opacity-30 dark:opacity-100 pointer-events-none"
-        style={{
-          backgroundImage:
-            'linear-gradient(0deg, transparent 24%, rgba(120, 120, 120, 0.15) 25%, rgba(120, 120, 120, 0.15) 26%, transparent 27%, transparent 74%, rgba(120, 120, 120, 0.15) 75%, rgba(120, 120, 120, 0.15) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(120, 120, 120, 0.15) 25%, rgba(120, 120, 120, 0.15) 26%, transparent 27%, transparent 74%, rgba(120, 120, 120, 0.15) 75%, rgba(120, 120, 120, 0.15) 76%, transparent 77%, transparent)',
-          backgroundSize: '150px 150px',
-        }}
-      ></div>
-
+    <div className="min-h-screen pt-20 pb-16 px-4 sm:px-8 flex flex-col relative overflow-hidden">
       {/* Main Content */}
       <motion.div
         variants={containerVariants}
@@ -66,7 +48,7 @@ export default function Home() {
           variants={itemVariants}
           className="max-w-3xl space-y-6 mb-12"
         >
-          <p className=" leading-8.75 text-gray-700 dark:text-gray-300">
+          <p className=" leading-8.75">
             Your friendly neighborhood frontend developer, UX architect, and
             JavaScript engineer. I spend my days (and often nights) painting the
             internet canvas with{' '}
@@ -77,7 +59,7 @@ export default function Home() {
             interactive experiences.
           </p>
 
-          <p className="leading-8.75 text-gray-700 dark:text-gray-300">
+          <p className="leading-8.75">
             Bona fide photochromic{' '}
             <span className="font-semibold text-gray-900 dark:text-white">
               LENS
@@ -111,9 +93,6 @@ export default function Home() {
           </Link>
         </motion.div>
       </motion.div>
-
-      {/* Footer with Social Links */}
-      <Footer />
     </div>
   )
 }

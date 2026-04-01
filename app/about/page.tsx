@@ -1,6 +1,5 @@
 'use client'
 
-import { Footer } from '@/components/Footer'
 import { motion } from 'framer-motion'
 
 const containerVariants = {
@@ -25,7 +24,7 @@ const itemVariants = {
 
 export default function About() {
   return (
-    <div className="min-h-screen pt-32 pb-16 px-4 sm:px-8 flex flex-col">
+    <div className="min-h-screen pt-24 pb-16 px-4 sm:px-8 flex flex-col">
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -133,8 +132,6 @@ export default function About() {
           </div>
         </motion.div>
       </motion.div>
-
-      <Footer />
     </div>
   )
 }

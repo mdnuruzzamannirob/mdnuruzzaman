@@ -11,10 +11,11 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
   return (
     <NextThemesProvider
       attribute="class"
-      defaultTheme="dark"
+      defaultTheme="system"
       enableSystem
       disableTransitionOnChange
-      storageKey="theme"
+      storageKey="theme-preference"
+      themes={['light', 'dark']}
     >
       {children}
     </NextThemesProvider>

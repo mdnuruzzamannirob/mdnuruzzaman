@@ -1,6 +1,5 @@
 'use client'
 
-import { Footer } from '@/components/Footer'
 import { motion } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
@@ -53,7 +52,7 @@ const itemVariants = {
 
 export default function Projects() {
   return (
-    <div className="min-h-screen pt-32 pb-16 px-4 sm:px-8 flex flex-col">
+    <div className="min-h-screen pt-24 pb-16 px-4 sm:px-8 flex flex-col">
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -121,8 +120,6 @@ export default function Projects() {
           </Link>
         </motion.div>
       </motion.div>
-
-      <Footer />
     </div>
   )
 }
