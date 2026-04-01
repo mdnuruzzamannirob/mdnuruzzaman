@@ -94,7 +94,7 @@ export default function Blog() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="flex-1 container-custom flex flex-col"
+        className="flex-1 container-body flex flex-col"
       >
         {/* Title */}
         <motion.h1

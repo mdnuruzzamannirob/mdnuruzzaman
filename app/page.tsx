@@ -27,13 +27,13 @@ const itemVariants = {
 
 export default function Home() {
   return (
-    <div className="min-h-screen pt-20 pb-16 flex flex-col relative overflow-hidden">
+    <div className="min-h-[calc(100vh-68px)] pt-20 pb-16 flex flex-col relative overflow-hidden">
       {/* Main Content */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="flex-1 container-custom flex flex-col justify-center relative z-10"
+        className="flex-1 container-body flex flex-col justify-center relative z-10"
       >
         {/* Heading with Glitch Effect */}
         <div className="relative mb-8 inline-block">
@@ -44,10 +44,7 @@ export default function Home() {
         </div>
 
         {/* Bio Section */}
-        <motion.div
-          variants={itemVariants}
-          className="max-w-3xl space-y-6 mb-12"
-        >
+        <motion.div variants={itemVariants} className=" space-y-6 mb-12">
           <p className=" leading-8.75">
             Your friendly neighborhood frontend developer, UX architect, and
             JavaScript engineer. I spend my days (and often nights) painting the

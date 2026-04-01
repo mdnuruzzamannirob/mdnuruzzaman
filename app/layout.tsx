@@ -2,7 +2,7 @@ import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import type { Metadata } from 'next'
-import { Roboto as Geist, Roboto_Mono as Geist_Mono } from 'next/font/google'
+import { Inter as Geist, Roboto_Mono as Geist_Mono } from 'next/font/google'
 import './globals.css'
 
 const geistSans = Geist({
@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Adeneken Wonderful | Portfolio',
+  title: 'Efaz.dev | Portfolio',
   description: 'Frontend Developer, UX Architect, and JavaScript Engineer',
 }
 
@@ -29,7 +29,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.className} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-screen flex flex-col bg-background text-foreground relative">
         <ThemeProvider>
