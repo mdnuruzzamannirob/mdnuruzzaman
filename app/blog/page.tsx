@@ -138,7 +138,7 @@ export default function Blog() {
                   </div>
                   <ArrowRight
                     size={20}
-                    className="text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors ml-4 flex-shrink-0"
+                    className="text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors ml-4 shrink-0"
                   />
                 </div>
 

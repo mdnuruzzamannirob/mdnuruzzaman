@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react'
 const navItems = [
   { label: 'About', href: '/about' },
   { label: 'Projects', href: '/projects' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '/contact' },
 ]
 
@@ -30,7 +31,7 @@ export function Header() {
           transition={{ duration: 0.5 }}
           className="text-2xl font-bold text-gray-900 dark:text-white"
         >
-          *
+          <Link href="/">Adeneken</Link>
         </motion.div>
 
         {/* Nav Items */}
@@ -40,7 +41,7 @@ export function Header() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="hidden md:flex items-center gap-8"
         >
-          {navItems.map((item, idx) => (
+          {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}

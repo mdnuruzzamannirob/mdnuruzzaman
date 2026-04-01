@@ -1,6 +1,7 @@
 'use client'
 
 import { Footer } from '@/components/Footer'
+import { GlitchText } from '@/components/GlitchText'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
@@ -27,21 +28,38 @@ const itemVariants = {
 
 export default function Home() {
   return (
-    <div className="min-h-screen pt-20 pb-16 px-4 sm:px-8 flex flex-col">
+    <div className="min-h-screen pt-20 pb-16 px-4 sm:px-8 flex flex-col bg-white dark:bg-black relative overflow-hidden">
+      {/* Gradient backgrounds */}
+      <div className="absolute top-0 left-0 w-full h-full opacity-30 dark:opacity-20 pointer-events-none">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/30 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-500/30 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+      </div>
+
+      {/* Grid background */}
+      <div
+        className="absolute inset-0 opacity-5 dark:opacity-10 pointer-events-none"
+        style={{
+          backgroundImage:
+            'linear-gradient(0deg, transparent 24%, rgba(255, 0, 0, 0.05) 25%, rgba(255, 0, 0, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 0, 0, 0.05) 75%, rgba(255, 0, 0, 0.05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 0, 0, 0.05) 25%, rgba(255, 0, 0, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 0, 0, 0.05) 75%, rgba(255, 0, 0, 0.05) 76%, transparent 77%, transparent)',
+          backgroundSize: '50px 50px',
+        }}
+      ></div>
+
       {/* Main Content */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="flex-1 max-w-4xl mx-auto w-full flex flex-col justify-center"
+        className="flex-1 max-w-4xl mx-auto w-full flex flex-col justify-center relative z-10"
       >
-        {/* Heading */}
-        <motion.h1
-          variants={itemVariants}
-          className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tighter mb-8 leading-tight"
-        >
-          I&apos;M ADENEKEN <br /> WONDERFUL
-        </motion.h1>
+        {/* Heading with Glitch Effect */}
+        <div className="relative mb-8 inline-block">
+          <GlitchText
+            text="I'M ADENEKEN WONDERFUL"
+            className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tighter leading-tight"
+          />
+        </div>
 
         {/* Bio Section */}
         <motion.div
