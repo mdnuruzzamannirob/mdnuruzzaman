@@ -1,9 +1,9 @@
 'use client'
 
-import { Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import { FaMoon, FaSun } from 'react-icons/fa'
 
 const navItems = [
   { label: 'About', href: '/about' },
@@ -46,7 +46,8 @@ export function Header() {
         className="p-2"
         aria-label="Toggle theme"
       >
-        {mounted && (theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />)}
+        {mounted &&
+          (theme === 'dark' ? <FaSun size={20} /> : <FaMoon size={20} />)}
       </button>
     </header>
   )

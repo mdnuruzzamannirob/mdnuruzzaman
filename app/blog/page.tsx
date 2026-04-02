@@ -1,8 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight, Calendar } from 'lucide-react'
 import Link from 'next/link'
+import { FaArrowRight, FaCalendar } from 'react-icons/fa'
 
 const blogPosts = [
   {
@@ -83,7 +83,7 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: 'easeOut' },
+    transition: { duration: 0.8 },
   },
 }
 
@@ -135,7 +135,7 @@ export default function Blog() {
                       {post.title}
                     </h2>
                   </div>
-                  <ArrowRight
+                  <FaArrowRight
                     size={20}
                     className="text-foreground/40 group-hover:text-foreground transition-colors ml-4 shrink-0"
                   />
@@ -146,7 +146,7 @@ export default function Blog() {
                 </p>
 
                 <div className="flex items-center gap-2 text-sm text-foreground/50">
-                  <Calendar size={16} />
+                  <FaCalendar size={16} />
                   {post.date}
                 </div>
               </Link>

@@ -2,7 +2,7 @@
 
 import { Footer } from '@/components/Footer'
 import { motion } from 'framer-motion'
-import { ExternalLink } from 'lucide-react'
+import { FaExternalLinkAlt } from 'react-icons/fa'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -20,7 +20,7 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: 'easeOut' },
+    transition: { duration: 0.8 },
   },
 }
 
@@ -308,7 +308,7 @@ export default function About() {
             className="inline-flex items-center gap-2 text-foreground hover:text-foreground/80 transition-colors group text-lg font-semibold"
           >
             Lets Continue To Projects
-            <ExternalLink
+            <FaExternalLinkAlt
               size={20}
               className="group-hover:translate-x-1 transition-transform"
             />

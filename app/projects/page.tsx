@@ -1,8 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
+import { FaShare } from 'react-icons/fa'
 
 const projects = [
   {
@@ -47,7 +47,7 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
 }
 
 export default function Projects() {
@@ -83,7 +83,7 @@ export default function Projects() {
                   <h3 className="text-xl font-semibold text-foreground">
                     {project.title}
                   </h3>
-                  <ArrowUpRight
+                  <FaShare
                     size={20}
                     className="text-foreground/40 group-hover:text-foreground transition-colors"
                   />
@@ -114,7 +114,7 @@ export default function Projects() {
             className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background rounded-lg font-medium hover:scale-105 transition-transform"
           >
             Get in Touch
-            <ArrowUpRight size={18} />
+            <FaShare size={18} />
           </Link>
         </motion.div>
       </motion.div>

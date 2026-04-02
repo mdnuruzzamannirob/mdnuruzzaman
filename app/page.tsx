@@ -3,8 +3,8 @@
 import { Footer } from '@/components/Footer'
 import { GlitchText } from '@/components/GlitchText'
 import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
+import { FaArrowRight } from 'react-icons/fa'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -22,7 +22,7 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: 'easeOut' },
+    transition: { duration: 0.8 },
   },
 }
 
@@ -96,7 +96,7 @@ export default function Home() {
             className="inline-flex items-center gap-2 text-foreground hover:gap-4 transition-all duration-300 font-medium group"
           >
             See More About Me
-            <ArrowRight
+            <FaArrowRight
               size={20}
               className="group-hover:translate-x-1 transition-transform"
             />

@@ -1,23 +1,30 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Github, Linkedin, Mail, MapPin, Phone, Twitter } from 'lucide-react'
+import {
+  FaEnvelope,
+  FaGithub,
+  FaLinkedin,
+  FaMapPin,
+  FaPhone,
+  FaTwitter,
+} from 'react-icons/fa'
 
 const contactMethods = [
   {
-    icon: Mail,
+    icon: FaEnvelope,
     label: 'Email',
     value: 'hello@adeneken.com',
     link: 'mailto:hello@adeneken.com',
   },
   {
-    icon: Phone,
+    icon: FaPhone,
     label: 'Phone',
     value: '+1 (555) 123-4567',
     link: 'tel:+15551234567',
   },
   {
-    icon: MapPin,
+    icon: FaMapPin,
     label: 'Location',
     value: 'San Francisco, CA',
     link: '#',
@@ -25,9 +32,9 @@ const contactMethods = [
 ]
 
 const socialLinks = [
-  { icon: Linkedin, label: 'LinkedIn', link: 'https://linkedin.com' },
-  { icon: Github, label: 'GitHub', link: 'https://github.com' },
-  { icon: Twitter, label: 'Twitter', link: 'https://twitter.com' },
+  { icon: FaLinkedin, label: 'LinkedIn', link: 'https://linkedin.com' },
+  { icon: FaGithub, label: 'GitHub', link: 'https://github.com' },
+  { icon: FaTwitter, label: 'Twitter', link: 'https://twitter.com' },
 ]
 
 const containerVariants = {
@@ -46,7 +53,7 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: 'easeOut' },
+    transition: { duration: 0.8 },
   },
 }
 

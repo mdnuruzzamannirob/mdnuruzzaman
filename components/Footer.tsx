@@ -2,21 +2,19 @@
 
 import { motion } from 'framer-motion'
 import {
-  Dribbble,
-  Facebook,
-  Github,
-  Instagram,
-  Linkedin,
-  Twitter,
-} from 'lucide-react'
+  FaEnvelope,
+  FaGithub,
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter,
+} from 'react-icons/fa'
 
 const socialLinks = [
-  { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-  { icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
-  { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-  { icon: Github, href: 'https://github.com', label: 'GitHub' },
-  { icon: Dribbble, href: 'https://dribbble.com', label: 'Dribbble' },
-  { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
+  { icon: FaTwitter, href: 'https://twitter.com', label: 'Twitter' },
+  { icon: FaEnvelope, href: 'mailto:contact@example.com', label: 'Email' },
+  { icon: FaLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
+  { icon: FaGithub, href: 'https://github.com', label: 'GitHub' },
+  { icon: FaInstagram, href: 'https://instagram.com', label: 'Instagram' },
 ]
 
 export function Footer({ className }: { className?: string }) {
