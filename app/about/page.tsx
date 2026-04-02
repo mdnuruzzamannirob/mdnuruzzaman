@@ -1,39 +1,49 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, type Variants } from 'framer-motion'
+import Link from 'next/link'
 import {
+  FaBookOpen,
+  FaCalendarAlt,
+  FaCode,
   FaEnvelope,
   FaExternalLinkAlt,
   FaGithub,
   FaInstagram,
+  FaLayerGroup,
   FaLinkedin,
+  FaPalette,
+  FaSpotify,
   FaTwitter,
 } from 'react-icons/fa'
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.16,
       delayChildren: 0.2,
     },
   },
 }
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 24 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8 },
+    transition: {
+      duration: 0.7,
+      ease: [0.22, 1, 0.36, 1],
+    },
   },
 }
 
 const skills = [
   {
     title: 'Engineering',
-    icon: '◯',
+    icon: FaCode,
     description:
       'The power of first impressions cannot be underestimated, and the gateway to capitalizing on them lies in exceptional website design. An outstanding website transcends mere aesthetics and extends its influence to encompass seamless functionality and user-friendly navigation. Drawing upon my expertise as a seasoned programmer, I possess the unique ability to tackle intricate technical challenges while crafting websites that exude sleekness and visual allure.',
     link: 'View Github',
@@ -41,7 +51,7 @@ const skills = [
   },
   {
     title: 'Product',
-    icon: '◯',
+    icon: FaLayerGroup,
     description:
       "While I may not fit the conventional mold of a product manager, my diverse skill set in research, product design, and product coordination empowers me to drive the growth of a product from its inception. As an exceptional analytical thinker, I possess the ability to uphold the product's vision throughout its entire journey, effectively bridging the technical and product aspects.",
     link: 'View Products',
@@ -49,7 +59,7 @@ const skills = [
   },
   {
     title: 'Design',
-    icon: '◯',
+    icon: FaPalette,
     description:
       'Despite not fitting the typical designer stereotype, my exceptional visual abilities enable me to excel as a presenter, effectively conveying design concepts to stakeholders and design teams. I possess a remarkable aptitude for conceptualization, allowing me to envision and bring forth stunning creations.',
     link: 'View Dribbble',
@@ -81,7 +91,7 @@ const reads = [
   },
   {
     title: 'Learning Something Great',
-    author: '😊',
+    author: 'Ongoing Journey',
     year: 'Currently',
     description: 'We continue learning everyday.',
   },
@@ -94,6 +104,7 @@ const playlists = [
     description:
       'This is an intensive, energizing songs list that helps me through the day and inspires generate breakthrough ideas.',
     link: 'View Playlist',
+    href: '#',
   },
   {
     title: 'Chill Lofi Study Beats',
@@ -101,33 +112,38 @@ const playlists = [
     description:
       'The perfect study beats, twenty four seven. with over 178 SONGS',
     link: 'View Playlist',
+    href: '#',
   },
   {
     title: 'Mellow Drive',
     platform: 'Spotify',
     description: 'Easy listening for pleasant drive',
     link: 'View Playlist',
+    href: '#',
   },
   {
     title: 'Rap UK',
     platform: 'Spotify',
     description: 'One of the finest rap in UK. Cover: Aitch',
     link: 'View Playlist',
+    href: '#',
   },
   {
     title: 'Mood Booster',
     platform: 'Spotify',
     description: "Get happy with today's dose of feel-good songs!",
     link: 'View Playlist',
+    href: '#',
   },
 ]
 
 const lens = {
   title: "Adeneken's Collection",
-  platform: 'ADenekan',
+  platform: 'Adeneken',
   description:
-    'This is an intensive, curation of the photochromic lenses that standout and the ones that i personally love. NOTE this is just by preference actualy.',
+    'This is an intensive curation of the photochromic lenses that stand out and the ones that I personally love. Note: this is mostly based on preference.',
   link: 'Visit Page',
+  href: '#',
 }
 
 const socialLinks = [
@@ -138,239 +154,214 @@ const socialLinks = [
   { icon: FaInstagram, href: 'https://instagram.com', label: 'Instagram' },
 ]
 
+function TimelineNode({
+  children,
+  isLast = false,
+}: {
+  children: React.ReactNode
+  isLast?: boolean
+}) {
+  return (
+    <div className="flex gap-5 sm:gap-6">
+      <div className="flex flex-col items-center pt-1">
+        <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2 border-foreground">
+          <div className="h-2 w-2 rounded-full bg-foreground" />
+        </div>
+        {!isLast && (
+          <div className="my-4 h-full min-h-20 w-px bg-linear-to-b from-foreground/20 to-transparent" />
+        )}
+      </div>
+
+      <div className="flex-1 pb-10">{children}</div>
+    </div>
+  )
+}
+
 export default function About() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <motion.div
+    <div className="min-h-screen">
+      <motion.section
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="flex-1 container-body flex flex-col pt-32 pb-20"
+        className="container-body flex flex-col pt-32 pb-20"
       >
-        {/* Title */}
         <motion.h1
           variants={itemVariants}
-          className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tighter mb-16"
+          className="mb-16 text-4xl font-bold tracking-tighter sm:text-5xl lg:text-6xl"
         >
           About Me.
         </motion.h1>
 
-        {/* Skills Timeline Section */}
-        <motion.div variants={itemVariants} className="mb-20">
-          {skills.map((skill, idx) => (
-            <motion.div
-              key={idx}
-              className="flex gap-6 mb-12"
-              variants={itemVariants}
-            >
-              {/* Timeline Dot */}
-              <div className="flex flex-col items-center pt-1">
-                <div className="w-6 h-6 rounded-full border-2 border-foreground flex items-center justify-center shrink-0">
-                  <div className="w-2 h-2 rounded-full bg-foreground" />
-                </div>
-                {idx < skills.length - 1 && (
-                  <div className="w-0.5 h-32 bg-linear-to-b from-foreground/20  to-transparent my-4" />
-                )}
-              </div>
+        <motion.section variants={itemVariants} className="mb-20">
+          <h2 className="mb-12 text-3xl font-bold">What I Do.</h2>
 
-              {/* Content */}
-              <div className="flex-1 pb-12">
-                <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-2xl font-bold">{skill.title}</h3>
-                  <a
-                    href={skill.href}
-                    className="text-sm font-semibold text-foreground/60 hover:text-foreground transition-colors whitespace-nowrap underline"
-                  >
-                    {skill.link}
-                  </a>
-                </div>
-                <p className="text-foreground/70 leading-relaxed mt-4 max-w-2xl">
-                  {skill.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+          <div>
+            {skills.map((skill, idx) => {
+              const Icon = skill.icon
 
-        {/* My Reads Section */}
-        <motion.div variants={itemVariants} className="mb-20">
-          <h2 className="text-3xl font-bold mb-12">My Reads.</h2>
-          <div className="space-y-12">
+              return (
+                <motion.div key={skill.title} variants={itemVariants}>
+                  <TimelineNode isLast={idx === skills.length - 1}>
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex items-center gap-3">
+                        <Icon className="text-foreground/60" />
+                        <h3 className="text-xl font-semibold">{skill.title}</h3>
+                      </div>
+
+                      <a
+                        href={skill.href}
+                        className="inline-flex items-center gap-2 whitespace-nowrap text-sm font-semibold text-foreground/60 underline transition-colors hover:text-foreground"
+                      >
+                        {skill.link}
+                        <FaExternalLinkAlt size={12} />
+                      </a>
+                    </div>
+
+                    <p className="mt-4 max-w-2xl leading-relaxed text-foreground/70">
+                      {skill.description}
+                    </p>
+                  </TimelineNode>
+                </motion.div>
+              )
+            })}
+          </div>
+        </motion.section>
+
+        <motion.section variants={itemVariants} className="mb-20">
+          <h2 className="mb-12 text-3xl font-bold">My Reads.</h2>
+
+          <div>
             {reads.map((read, idx) => (
-              <motion.div
-                key={idx}
-                className="flex gap-6"
-                variants={itemVariants}
-              >
-                {/* Timeline Dot */}
-                <div className="flex flex-col items-center pt-1">
-                  <div className="w-6 h-6 rounded-full border-2 border-foreground flex items-center justify-center shrink-0">
-                    <div className="w-2 h-2 rounded-full bg-foreground" />
-                  </div>
-                  {idx < reads.length - 1 && (
-                    <div className="w-0.5 h-32 bg-linear-to-b from-foreground/20 to-transparent  my-4" />
-                  )}
-                </div>
-
-                {/* Content */}
-                <div className="flex-1">
+              <motion.div key={read.title} variants={itemVariants}>
+                <TimelineNode isLast={idx === reads.length - 1}>
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <h3 className="text-xl font-semibold">{read.title}</h3>
-                      <p className="text-sm text-foreground/60 mt-1">
+                      <div className="flex items-center gap-3">
+                        <FaBookOpen className="text-foreground/60" />
+                        <h3 className="text-xl font-semibold">{read.title}</h3>
+                      </div>
+
+                      <p className="mt-2 text-sm text-foreground/60">
                         {read.author}
                       </p>
                     </div>
-                    <p className="text-sm font-semibold text-foreground/60 whitespace-nowrap">
-                      📅 {read.year}
-                    </p>
+
+                    <div className="inline-flex items-center gap-2 whitespace-nowrap text-sm font-semibold text-foreground/60">
+                      <FaCalendarAlt size={14} />
+                      <span>{read.year}</span>
+                    </div>
                   </div>
-                  <p className="text-foreground/70 leading-relaxed mt-3 max-w-2xl">
+
+                  <p className="mt-3 max-w-2xl leading-relaxed text-foreground/70">
                     {read.description}
                   </p>
-                </div>
+                </TimelineNode>
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </motion.section>
 
-        {/* My Playlist Section */}
-        <motion.div variants={itemVariants} className="mb-20">
-          <h2 className="text-3xl font-bold mb-12">My Playlist.</h2>
-          <div className="space-y-8">
+        <motion.section variants={itemVariants} className="mb-20">
+          <h2 className="mb-12 text-3xl font-bold">My Playlist.</h2>
+
+          <div>
             {playlists.map((playlist, idx) => (
-              <motion.div
-                key={idx}
-                className="flex gap-6"
-                variants={itemVariants}
-              >
-                {/* Timeline Dot */}
-                <div className="flex flex-col items-center pt-1">
-                  <div className="w-6 h-6 rounded-full border-2 border-foreground flex items-center justify-center shrink-0">
-                    <div className="w-2 h-2 rounded-full bg-foreground" />
-                  </div>
-                  {idx < playlists.length - 1 && (
-                    <div className="w-0.5 h-24 bg-linear-to-b from-foreground/20 to-transparent  my-4" />
-                  )}
-                </div>
-
-                {/* Content */}
-                <div className="flex-1">
+              <motion.div key={playlist.title} variants={itemVariants}>
+                <TimelineNode isLast={idx === playlists.length - 1}>
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <h3 className="text-xl font-semibold">
-                        {playlist.title}
-                      </h3>
-                      <p className="text-sm text-foreground/60 mt-1">
+                      <div className="flex items-center gap-3">
+                        <FaSpotify className="text-foreground/60" />
+                        <h3 className="text-xl font-semibold">
+                          {playlist.title}
+                        </h3>
+                      </div>
+
+                      <p className="mt-2 text-sm text-foreground/60">
                         {playlist.platform}
                       </p>
                     </div>
+
                     <a
-                      href="#"
-                      className="text-sm font-semibold text-foreground/60 hover:text-foreground transition-colors underline whitespace-nowrap"
+                      href={playlist.href}
+                      className="inline-flex items-center gap-2 whitespace-nowrap text-sm font-semibold text-foreground/60 underline transition-colors hover:text-foreground"
                     >
                       {playlist.link}
+                      <FaExternalLinkAlt size={12} />
                     </a>
                   </div>
-                  <p className="text-foreground/70 leading-relaxed mt-3 max-w-2xl">
+
+                  <p className="mt-3 max-w-2xl leading-relaxed text-foreground/70">
                     {playlist.description}
                   </p>
-                </div>
+                </TimelineNode>
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </motion.section>
 
-        {/* My Photochromic Lens Section */}
-        <motion.div variants={itemVariants} className="mb-20">
-          <h2 className="text-3xl font-bold mb-12">My Photochromic Lens.</h2>
-          <div className="flex gap-6">
-            {/* Timeline Dot */}
-            <div className="flex flex-col items-center pt-1">
-              <div className="w-6 h-6 rounded-full border-2 border-foreground flex items-center justify-center shrink-0">
-                <div className="w-2 h-2 rounded-full bg-foreground" />
+        <motion.section variants={itemVariants} className="mb-20">
+          <h2 className="mb-12 text-3xl font-bold">My Photochromic Lens.</h2>
+
+          <TimelineNode isLast>
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <h3 className="text-xl font-semibold">{lens.title}</h3>
+                <p className="mt-2 text-sm text-foreground/60">
+                  {lens.platform}
+                </p>
               </div>
+
+              <a
+                href={lens.href}
+                className="inline-flex items-center gap-2 whitespace-nowrap text-sm font-semibold text-foreground/60 underline transition-colors hover:text-foreground"
+              >
+                {lens.link}
+                <FaExternalLinkAlt size={12} />
+              </a>
             </div>
 
-            {/* Content */}
-            <div className="flex-1">
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <h3 className="text-xl font-semibold">{lens.title}</h3>
-                  <p className="text-sm text-foreground/60 mt-1">
-                    {lens.platform}
-                  </p>
-                </div>
-                <a
-                  href="#"
-                  className="text-sm font-semibold text-foreground/60 hover:text-foreground transition-colors underline whitespace-nowrap"
-                >
-                  {lens.link}
-                </a>
-              </div>
-              <p className="text-foreground/70 leading-relaxed mt-3 max-w-2xl">
-                {lens.description}
-              </p>
-            </div>
-          </div>
-        </motion.div>
+            <p className="mt-3 max-w-2xl leading-relaxed text-foreground/70">
+              {lens.description}
+            </p>
+          </TimelineNode>
+        </motion.section>
 
-        {/* CTA Section */}
-        <motion.div variants={itemVariants} className="py-12">
-          <a
+        <motion.div variants={itemVariants} className="mb-14">
+          <Link
             href="/projects"
-            className="inline-flex items-center gap-2 text-foreground hover:text-foreground/80 transition-colors group text-lg font-semibold"
+            className="group inline-flex items-center gap-2 text-lg font-semibold text-foreground transition-colors hover:text-foreground/80"
           >
             Lets Continue To Projects
-            <FaExternalLinkAlt
-              size={20}
-              className="group-hover:translate-x-1 transition-transform"
-            />
-          </a>
+            <FaExternalLinkAlt className="transition-transform group-hover:translate-x-1" />
+          </Link>
         </motion.div>
 
-        {/* Footer Section */}
         <motion.div
           variants={itemVariants}
-          className="border-t border-foreground/10 pt-12 mt-12"
+          className="flex flex-wrap items-center gap-5 border-t border-foreground/10 pt-8"
         >
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between">
-            <div className="mb-8 sm:mb-0">
-              <p className="text-foreground/60 mb-4">Let's connect</p>
-              <div className="flex gap-4">
-                {socialLinks.map((social, idx) => {
-                  const Icon = social.icon
-                  return (
-                    <motion.a
-                      key={social.label}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={social.label}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.8 + idx * 0.05 }}
-                      whileHover={{ scale: 1.2, y: -2 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="text-foreground/60 hover:text-foreground transition-colors"
-                    >
-                      <Icon size={24} />
-                    </motion.a>
-                  )
-                })}
-              </div>
-            </div>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.2 }}
-              className="text-sm text-foreground/50"
-            >
-              <p>© 2026 Adeneken Wonderful. All rights reserved.</p>
-            </motion.div>
-          </div>
+          {socialLinks.map((social) => {
+            const Icon = social.icon
+
+            return (
+              <motion.a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+                whileHover={{ scale: 1.12, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="text-foreground/60 transition-colors hover:text-foreground"
+              >
+                <Icon size={22} />
+              </motion.a>
+            )
+          })}
         </motion.div>
-      </motion.div>
+      </motion.section>
     </div>
   )
 }
