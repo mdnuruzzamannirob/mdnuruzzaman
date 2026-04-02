@@ -5,8 +5,9 @@ import { socialLinks } from '@/data/social-link'
 import { containerVariants, itemVariants } from '@/lib/constants'
 import emailjs from '@emailjs/browser'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import { FormEvent, useState } from 'react'
-import { FaPaperPlane } from 'react-icons/fa'
+import { FaExternalLinkAlt, FaPaperPlane } from 'react-icons/fa'
 import { toast } from 'react-toastify'
 
 const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
@@ -109,7 +110,6 @@ export default function Contact() {
             Contact Me.
           </h1>
         </motion.div>
-
         {/* Intro */}
         <motion.p
           variants={itemVariants}
@@ -119,7 +119,6 @@ export default function Contact() {
           hello? I&apos;m always open to meaningful conversations and building
           thoughtful digital experiences together.
         </motion.p>
-
         {/* Contact Methods */}
         <motion.section variants={itemVariants} className="mb-20">
           <h2 className="mb-10 text-3xl font-bold">Get In Touch.</h2>
@@ -152,7 +151,6 @@ export default function Contact() {
             })}
           </div>
         </motion.section>
-
         {/* Form */}
         <motion.section variants={itemVariants} className="mb-20">
           <h2 className="mb-10 text-3xl font-bold">Send A Message.</h2>
@@ -234,11 +232,19 @@ export default function Contact() {
             </form>
           </div>
         </motion.section>
-
-        {/* Footer / Social */}
+        {/* Footer Links */}{' '}
+        <motion.div variants={itemVariants} className="mb-14">
+          <Link
+            href="/"
+            className="group inline-flex items-center gap-2 text-lg font-semibold text-foreground transition-colors hover:text-foreground/80"
+          >
+            Go Back Home
+            <FaExternalLinkAlt className="transition-transform group-hover:translate-x-1" />
+          </Link>
+        </motion.div>
         <motion.div
           variants={itemVariants}
-          className="flex flex-wrap items-center gap-5 border-t border-foreground/10 pt-8"
+          className="flex flex-wrap items-center gap-5 pt-8"
         >
           {socialLinks.map((social) => {
             const Icon = social.icon

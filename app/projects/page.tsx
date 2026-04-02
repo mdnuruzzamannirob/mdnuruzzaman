@@ -5,7 +5,9 @@ import { socialLinks } from '@/data/social-link'
 import { containerVariants, itemVariants } from '@/lib/constants'
 import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useMemo, useState } from 'react'
+import { FaExternalLinkAlt } from 'react-icons/fa'
 
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState('All')
@@ -37,7 +39,6 @@ export default function Projects() {
             Projects.
           </h1>
         </motion.div>
-
         <motion.p
           variants={itemVariants}
           className="mb-14 max-w-2xl leading-8 text-foreground/75"
@@ -46,7 +47,6 @@ export default function Projects() {
           contributed to, or find inspiring in the web development and design
           space.
         </motion.p>
-
         <motion.div
           variants={itemVariants}
           className="flex gap-4 mb-8 overflow-x-auto pb-1"
@@ -67,7 +67,6 @@ export default function Projects() {
             </motion.button>
           ))}
         </motion.div>
-
         <motion.div
           variants={containerVariants}
           className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-16"
@@ -127,40 +126,38 @@ export default function Projects() {
             </motion.a>
           ))}
         </motion.div>
-
-        {/* Footer */}
+        {/* Footer Links */}{' '}
+        <motion.div variants={itemVariants} className="mb-14">
+          <Link
+            href="/contact"
+            className="group inline-flex items-center gap-2 text-lg font-semibold text-foreground transition-colors hover:text-foreground/80"
+          >
+            Can I help you?
+            <FaExternalLinkAlt className="transition-transform group-hover:translate-x-1" />
+          </Link>
+        </motion.div>
         <motion.div
           variants={itemVariants}
-          className="border-t border-foreground/10 pt-8"
+          className="flex flex-wrap items-center gap-5 pt-8"
         >
-          <div className="flex flex-col items-center gap-6">
-            {/* Social Icons */}
-            <div className="flex flex-wrap items-center justify-center gap-5">
-              {socialLinks.map((social) => {
-                const Icon = social.icon
+          {socialLinks.map((social) => {
+            const Icon = social.icon
 
-                return (
-                  <motion.a
-                    key={social.label}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={social.label}
-                    whileHover={{ scale: 1.12, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="text-foreground/60 transition-colors hover:text-foreground"
-                  >
-                    <Icon size={22} />
-                  </motion.a>
-                )
-              })}
-            </div>
-
-            {/* Copyright */}
-            <p className="text-sm text-foreground/50 text-center">
-              © 2026 Adeneken Wonderful. All rights reserved.
-            </p>
-          </div>
+            return (
+              <motion.a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+                whileHover={{ scale: 1.12, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="text-foreground/60 transition-colors hover:text-foreground"
+              >
+                <Icon size={22} />
+              </motion.a>
+            )
+          })}
         </motion.div>
       </motion.div>
     </div>

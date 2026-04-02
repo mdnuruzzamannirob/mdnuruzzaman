@@ -7,7 +7,12 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useMemo, useState } from 'react'
-import { FaArrowRight, FaCalendarAlt, FaClock } from 'react-icons/fa'
+import {
+  FaArrowRight,
+  FaCalendarAlt,
+  FaClock,
+  FaExternalLinkAlt,
+} from 'react-icons/fa'
 
 export default function Blog() {
   const [activeCategory, setActiveCategory] = useState('All')
@@ -36,7 +41,6 @@ export default function Blog() {
             Blog.
           </h1>
         </motion.div>
-
         {/* Intro */}
         <motion.p
           variants={itemVariants}
@@ -45,7 +49,6 @@ export default function Blog() {
           Thoughts, experiments, and reflections on web development, design,
           performance, and the tools I enjoy building with.
         </motion.p>
-
         {/* Category Filter */}
         <motion.div
           variants={itemVariants}
@@ -70,7 +73,6 @@ export default function Blog() {
             )
           })}
         </motion.div>
-
         {/* Blog Grid */}
         <motion.section variants={itemVariants} className="mb-20">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 ">
@@ -138,11 +140,19 @@ export default function Blog() {
             ))}
           </div>
         </motion.section>
-
-        {/* Footer */}
+        {/* Footer Links */}{' '}
+        <motion.div variants={itemVariants} className="mb-14">
+          <Link
+            href="/contact"
+            className="group inline-flex items-center gap-2 text-lg font-semibold text-foreground transition-colors hover:text-foreground/80"
+          >
+            Can I help you?
+            <FaExternalLinkAlt className="transition-transform group-hover:translate-x-1" />
+          </Link>
+        </motion.div>
         <motion.div
           variants={itemVariants}
-          className="flex flex-wrap items-center gap-5 border-t border-foreground/10 pt-8"
+          className="flex flex-wrap items-center gap-5 pt-8"
         >
           {socialLinks.map((social) => {
             const Icon = social.icon

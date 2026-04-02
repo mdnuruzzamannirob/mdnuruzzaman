@@ -50,7 +50,6 @@ export default function About() {
         >
           About Me.
         </motion.h1>
-
         <motion.section variants={itemVariants} className="mb-20">
           <h2 className="mb-12 text-3xl font-bold">What I Do.</h2>
 
@@ -85,7 +84,6 @@ export default function About() {
             })}
           </div>
         </motion.section>
-
         <motion.section variants={itemVariants} className="mb-20">
           <h2 className="mb-12 text-3xl font-bold">My Reads.</h2>
 
@@ -119,7 +117,6 @@ export default function About() {
             ))}
           </div>
         </motion.section>
-
         <motion.section variants={itemVariants} className="mb-20">
           <h2 className="mb-12 text-3xl font-bold">My Playlist.</h2>
 
@@ -158,7 +155,6 @@ export default function About() {
             ))}
           </div>
         </motion.section>
-
         <motion.section variants={itemVariants} className="mb-20">
           <h2 className="mb-12 text-3xl font-bold">My Photochromic Lens.</h2>
 
@@ -185,7 +181,7 @@ export default function About() {
             </p>
           </TimelineNode>
         </motion.section>
-
+        {/* Footer Links */}{' '}
         <motion.div variants={itemVariants} className="mb-14">
           <Link
             href="/projects"
@@ -195,10 +191,9 @@ export default function About() {
             <FaExternalLinkAlt className="transition-transform group-hover:translate-x-1" />
           </Link>
         </motion.div>
-
         <motion.div
           variants={itemVariants}
-          className="flex flex-wrap items-center gap-5 border-t border-foreground/10 pt-8"
+          className="flex flex-wrap items-center gap-5 pt-8"
         >
           {socialLinks.map((social) => {
             const Icon = social.icon
