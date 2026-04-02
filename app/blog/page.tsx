@@ -62,7 +62,7 @@ export default function Blog() {
                 key={category}
                 type="button"
                 onClick={() => setActiveCategory(category)}
-                className={`rounded-lg px-4 py-2 text-sm font-medium transition-all ${
+                className={`rounded-lg px-4 py-2 whitespace-nowrap text-sm font-medium transition-all ${
                   isActive
                     ? 'bg-foreground text-background'
                     : 'bg-foreground/5 text-foreground/70 hover:bg-foreground/10 hover:text-foreground'
