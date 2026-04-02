@@ -1,71 +1,17 @@
 'use client'
 
+import { contactMethods } from '@/data/contact'
+import { socialLinks } from '@/data/social-link'
+import { containerVariants, itemVariants } from '@/lib/constants'
 import emailjs from '@emailjs/browser'
-import { motion, type Variants } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { FormEvent, useState } from 'react'
-import {
-  FaEnvelope,
-  FaGithub,
-  FaInstagram,
-  FaLinkedin,
-  FaMapMarkerAlt,
-  FaPaperPlane,
-  FaPhoneAlt,
-  FaTwitter,
-} from 'react-icons/fa'
+import { FaPaperPlane } from 'react-icons/fa'
 import { toast } from 'react-toastify'
 
-const contactMethods = [
-  {
-    icon: FaEnvelope,
-    label: 'Email',
-    value: 'hello@adeneken.com',
-    link: 'mailto:hello@adeneken.com',
-  },
-  {
-    icon: FaPhoneAlt,
-    label: 'Phone',
-    value: '+1 (555) 123-4567',
-    link: 'tel:+15551234567',
-  },
-  {
-    icon: FaMapMarkerAlt,
-    label: 'Location',
-    value: 'San Francisco, CA',
-    link: '#',
-  },
-]
-
-const socialLinks = [
-  { icon: FaTwitter, href: 'https://twitter.com', label: 'Twitter' },
-  { icon: FaEnvelope, href: 'mailto:contact@example.com', label: 'Email' },
-  { icon: FaLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-  { icon: FaGithub, href: 'https://github.com', label: 'GitHub' },
-  { icon: FaInstagram, href: 'https://instagram.com', label: 'Instagram' },
-]
-
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.16,
-      delayChildren: 0.2,
-    },
-  },
-}
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.7,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-}
+const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -111,10 +57,6 @@ export default function Contact() {
       toast.error('Please enter a valid email address.')
       return
     }
-
-    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
-    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
 
     if (!serviceId || !templateId || !publicKey) {
       toast.error('Email service is not configured. Please try again later.')

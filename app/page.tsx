@@ -1,47 +1,11 @@
 'use client'
 
 import { GlitchText } from '@/components/GlitchText'
-import { motion, type Variants } from 'framer-motion'
+import { socialLinks } from '@/data/social-link'
+import { containerVariants, itemVariants } from '@/lib/constants'
+import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { BsArrowRight } from 'react-icons/bs'
-import {
-  FaEnvelope,
-  FaGithub,
-  FaInstagram,
-  FaLinkedin,
-  FaTwitter,
-} from 'react-icons/fa'
-
-const socialLinks = [
-  { icon: FaTwitter, href: 'https://twitter.com', label: 'Twitter' },
-  { icon: FaEnvelope, href: 'mailto:contact@example.com', label: 'Email' },
-  { icon: FaLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-  { icon: FaGithub, href: 'https://github.com', label: 'GitHub' },
-  { icon: FaInstagram, href: 'https://instagram.com', label: 'Instagram' },
-]
-
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.18,
-      delayChildren: 0.2,
-    },
-  },
-}
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.7,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-}
 
 export default function Home() {
   return (

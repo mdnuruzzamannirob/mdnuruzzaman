@@ -110,10 +110,18 @@ body::after {
   animation: underline-expand 400ms ease forwards;
 }
 
+.nav-link.active::after {
+  animation: underline-expand 400ms ease forwards;
+}
+
 .container-header {
   @apply max-w-6xl mx-auto w-full px-4 sm:px-8
 }
 
 .container-body {
   @apply max-w-5xl mx-auto w-full px-4 sm:px-8
+}
+
+.nav-link-mobile {
+  @apply block w-full text-left;
 }
