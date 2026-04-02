@@ -2,6 +2,7 @@ import { Header } from '@/components/Header'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import type { Metadata } from 'next'
 import { Inter as Geist, Roboto_Mono as Geist_Mono } from 'next/font/google'
+import { ToastContainer } from 'react-toastify'
 import './globals.css'
 
 const geistSans = Geist({
@@ -34,6 +35,16 @@ export default function RootLayout({
         <ThemeProvider>
           <Header />
           <main className="flex-1 relative z-10">{children}</main>
+          <ToastContainer
+            position="top-right"
+            autoClose={3500}
+            hideProgressBar={false}
+            newestOnTop
+            closeOnClick
+            pauseOnHover
+            draggable
+            theme="colored"
+          />
         </ThemeProvider>
       </body>
     </html>
