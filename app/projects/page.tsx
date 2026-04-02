@@ -52,19 +52,17 @@ export default function Projects() {
           className="flex gap-4 mb-8 overflow-x-auto pb-1"
         >
           {categories.map((category) => (
-            <motion.button
+            <button
               key={category}
-              whileHover={{ y: -1 }}
-              whileTap={{ scale: 0.97 }}
               onClick={() => setActiveCategory(category)}
-              className={`px-4 py-2 rounded-lg text-sm whitespace-nowrap transition-all ${
+              className={`rounded-lg px-4 py-2 text-sm font-medium transition-all ${
                 activeCategory === category
-                  ? 'bg-foreground text-background font-semibold'
-                  : 'text-foreground/60 hover:text-foreground'
+                  ? 'bg-foreground text-background '
+                  : 'bg-foreground/5 text-foreground/70 hover:bg-foreground/10 hover:text-foreground'
               }`}
             >
               {category}
-            </motion.button>
+            </button>
           ))}
         </motion.div>
         <motion.div

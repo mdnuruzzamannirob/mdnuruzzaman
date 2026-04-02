@@ -102,10 +102,10 @@ export default function Contact() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="container-body flex min-h-[calc(100vh-8rem)] flex-col"
+        className="flex-1 container-body flex flex-col"
       >
         {/* Title */}
-        <motion.div variants={itemVariants} className="mb-6">
+        <motion.div variants={itemVariants} className="mb-4">
           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl lg:text-6xl">
             Contact Me.
           </h1>
