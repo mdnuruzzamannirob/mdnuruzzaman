@@ -1,6 +1,6 @@
 ﻿'use client'
 
-import { blogPosts } from '@/data/blog'
+import { articlePosts } from '@/data/articles'
 import { socialLinks } from '@/data/social-link'
 import { containerVariants, itemVariants } from '@/lib/constants'
 import { motion } from 'framer-motion'
@@ -9,17 +9,17 @@ import Link from 'next/link'
 import { useMemo, useState } from 'react'
 import { FaCalendarAlt, FaClock, FaExternalLinkAlt } from 'react-icons/fa'
 
-export default function Blog() {
+export default function Articles() {
   const [activeCategory, setActiveCategory] = useState('All')
 
   const categories = useMemo(
-    () => ['All', ...new Set(blogPosts.map((post) => post.category))],
+    () => ['All', ...new Set(articlePosts.map((post) => post.category))],
     [],
   )
 
   const filteredPosts = useMemo(() => {
-    if (activeCategory === 'All') return blogPosts
-    return blogPosts.filter((post) => post.category === activeCategory)
+    if (activeCategory === 'All') return articlePosts
+    return articlePosts.filter((post) => post.category === activeCategory)
   }, [activeCategory])
 
   return (
@@ -32,13 +32,13 @@ export default function Blog() {
       >
         <motion.div variants={itemVariants} className="mb-4">
           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl lg:text-6xl">
-            Blog.
+            Articles.
           </h1>
         </motion.div>
 
         <motion.p
           variants={itemVariants}
-          className="mb-10 max-w-2xl leading-8 text-foreground/75"
+          className="mb-14 max-w-2xl leading-8 text-foreground/75"
         >
           Thoughts, experiments, and reflections on web development, design,
           performance, and the tools I enjoy building with.

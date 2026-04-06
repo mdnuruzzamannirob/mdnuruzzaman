@@ -25,7 +25,7 @@ export default function Resume() {
         {/* Description */}
         <motion.p
           variants={itemVariants}
-          className="mb-10 max-w-3xl leading-8 text-foreground/90"
+          className="mb-14 max-w-3xl leading-8 text-foreground/90"
         >
           Reach out to me via my{' '}
           <Link
@@ -52,7 +52,7 @@ export default function Resume() {
           >
             download
           </a>{' '}
-          the resume
+          the resume.
         </motion.p>
         {/* PDF Viewer */}
         <motion.div
@@ -70,10 +70,10 @@ export default function Resume() {
         {/* Footer Links */}{' '}
         <motion.div variants={itemVariants} className="my-14">
           <Link
-            href="/blog"
+            href="/articles"
             className="group inline-flex items-center gap-2 text-lg font-semibold text-foreground transition-colors hover:text-foreground/80"
           >
-            Read My Blog
+            Read My Articles
             <FaExternalLinkAlt className="transition-transform group-hover:translate-x-1" />
           </Link>
         </motion.div>

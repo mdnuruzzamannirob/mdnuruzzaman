@@ -119,45 +119,50 @@ export default function Contact() {
           hello? I&apos;m always open to meaningful conversations and building
           thoughtful digital experiences together.
         </motion.p>
-        {/* Contact Methods */}
-        <motion.section variants={itemVariants} className="mb-20">
-          <h2 className="mb-10 text-3xl font-bold">Get In Touch.</h2>
+        <div className="flex flex-col lg:flex-row gap-10 mb-20">
+          {/* Contact Methods */}
+          <motion.section variants={itemVariants} className="flex-1">
+            <h2 className="mb-10 text-3xl font-bold">Get In Touch.</h2>
 
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-            {contactMethods.map((method) => {
-              const Icon = method.icon
+            <div className="grid grid-cols-1 gap-5 ">
+              {contactMethods.map((method) => {
+                const Icon = method.icon
 
-              return (
-                <motion.a
-                  key={method.label}
-                  href={method.link}
-                  whileHover={{ y: -4 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="group rounded-xl border border-foreground/10 bg-foreground/3 p-6 transition-all duration-300 hover:border-foreground/20 hover:bg-foreground/5"
-                >
-                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-foreground/10 bg-foreground/5">
-                    <Icon className="text-lg text-foreground/80" />
-                  </div>
+                return (
+                  <motion.div
+                    key={method.label}
+                    className="rounded-xl flex gap-5"
+                  >
+                    <div className="mb-5 flex size-12 items-center justify-center rounded-xl border border-foreground/10 bg-foreground/5">
+                      <Icon className="text-lg text-foreground/80" />
+                    </div>
 
-                  <h3 className="mb-2 text-lg font-semibold text-foreground">
-                    {method.label}
-                  </h3>
+                    <div className="">
+                      <h3 className="text-lg font-semibold text-foreground">
+                        {method.label}
+                      </h3>
 
-                  <p className="text-sm leading-6 text-foreground/60 transition-colors group-hover:text-foreground/80">
-                    {method.value}
-                  </p>
-                </motion.a>
-              )
-            })}
-          </div>
-        </motion.section>
-        {/* Form */}
-        <motion.section variants={itemVariants} className="mb-20">
-          <h2 className="mb-10 text-3xl font-bold">Send A Message.</h2>
+                      <Link
+                        href={method.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={method.label}
+                        className="text-sm leading-6 text-foreground/60 transition-colors duration-300 hover:text-foreground"
+                      >
+                        {method.value}
+                      </Link>
+                    </div>
+                  </motion.div>
+                )
+              })}
+            </div>
+          </motion.section>
+          {/* Form */}
+          <motion.section variants={itemVariants} className="flex-[1.5]">
+            <h2 className="mb-10 text-3xl font-bold">Send A Message.</h2>
 
-          <div className="rounded-xl border border-foreground/10 bg-foreground/2 p-6 sm:p-8">
             <form className="space-y-6" onSubmit={handleSubmit} noValidate>
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-foreground/70">
                     Your Name
@@ -230,8 +235,8 @@ export default function Contact() {
                 {isSubmitting ? 'Sending...' : 'Send Message'}
               </motion.button>
             </form>
-          </div>
-        </motion.section>
+          </motion.section>
+        </div>
         {/* Footer Links */}{' '}
         <motion.div variants={itemVariants} className="mb-14">
           <Link

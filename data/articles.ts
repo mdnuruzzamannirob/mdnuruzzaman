@@ -1,4 +1,4 @@
-type BlogPost = {
+export type ArticlePost = {
   id: number
   title: string
   excerpt: string
@@ -10,9 +10,7 @@ type BlogPost = {
   externalLink: string
 }
 
-export type BlogPosts = BlogPost[]
-
-export const blogPosts: BlogPosts = [
+export const articlePosts: ArticlePost[] = [
   {
     id: 1,
     title: 'Getting Started with Framer Motion',

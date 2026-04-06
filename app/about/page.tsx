@@ -44,12 +44,12 @@ export default function About() {
         animate="visible"
         className="container-body flex flex-col pt-32 pb-20"
       >
-        <motion.h1
-          variants={itemVariants}
-          className="mb-16 text-4xl font-bold tracking-tighter sm:text-5xl lg:text-6xl"
-        >
-          About Me.
-        </motion.h1>
+        {/* Title */}
+        <motion.div variants={itemVariants} className="mb-16">
+          <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl lg:text-6xl">
+            About Me.
+          </h1>
+        </motion.div>
         <motion.section variants={itemVariants} className="mb-20">
           <h2 className="mb-12 text-3xl font-bold">What I Do.</h2>
 

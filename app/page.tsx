@@ -59,10 +59,10 @@ export default function Home() {
           Express, and MongoDB — because I want to own the full picture, not
           just the frontend. I write about what I learn on my{' '}
           <Link
-            href="/blog"
+            href="/articles"
             className="font-semibold text-foreground transition-all hover:opacity-70 hover:underline"
           >
-            BLOG
+            Articles
           </Link>
           , share my work on{' '}
           <Link

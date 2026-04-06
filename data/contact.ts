@@ -4,19 +4,19 @@ export const contactMethods = [
   {
     icon: FaEnvelope,
     label: 'Email',
-    value: 'hello@adeneken.com',
-    link: 'mailto:hello@adeneken.com',
+    value: 'dev.mdnuruzzaman@gmail.com',
+    link: 'mailto:dev.mdnuruzzaman@gmail.com',
   },
   {
     icon: FaPhoneAlt,
     label: 'Phone',
-    value: '+1 (555) 123-4567',
-    link: 'tel:+15551234567',
+    value: '+880 1973 875893',
+    link: 'tel:+8801973875893',
   },
   {
     icon: FaMapMarkerAlt,
     label: 'Location',
-    value: 'San Francisco, CA',
-    link: '#',
+    value: 'Dhaka, Bangladesh',
+    link: 'https://www.google.com/maps?q=Dhaka,+Bangladesh',
   },
 ]

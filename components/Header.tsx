@@ -41,8 +41,10 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className={`nav-link px-2 relative transition-all duration-300 ${
-                isActive(item.href) ? 'active' : ''
+              className={`nav-link px-2 relative font-medium transition-all duration-300 ${
+                isActive(item.href)
+                  ? 'active'
+                  : 'text-foreground/70 hover:text-foreground'
               }`}
             >
               {item.label}
@@ -74,7 +76,7 @@ export function Header() {
         </button>
       </div>
 
-      {/* Mobile Menu Drawer */}
+      {/* Mobile Menu Drawer  */}
       {mobileMenuOpen && (
         <>
           {/* Backdrop */}
@@ -106,7 +108,7 @@ export function Header() {
                     href={item.href}
                     className={`px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 ${
                       isActive(item.href)
-                        ? 'bg-surface-hover '
+                        ? 'bg-surface-hover text-foreground'
                         : 'hover:bg-surface-hover'
                     }`}
                   >
