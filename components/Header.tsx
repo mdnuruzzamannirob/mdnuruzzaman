@@ -30,7 +30,7 @@ export function Header() {
     <header className="w-full z-50 container-header py-8 flex items-center justify-between relative">
       {/* Logo */}
       <div className="text-xl sm:text-2xl font-bold text-foreground">
-        <Link href="/">efaz.dev</Link>
+        <Link href="/">Md. Nuruzzaman</Link>
       </div>
 
       {/* Right Side - Nav Items, Theme Toggle & Mobile Menu */}
@@ -41,7 +41,7 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className={`nav-link text-sm px-2 relative transition-all duration-300 ${
+              className={`nav-link px-2 relative transition-all duration-300 ${
                 isActive(item.href) ? 'active' : ''
               }`}
             >
@@ -74,7 +74,7 @@ export function Header() {
         </button>
       </div>
 
-      {/* Mobile Menu Drawer - Fullscreen Modal */}
+      {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
         <>
           {/* Backdrop */}

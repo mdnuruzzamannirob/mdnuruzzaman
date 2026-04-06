@@ -1,22 +1,17 @@
 import { Header } from '@/components/Header'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import type { Metadata } from 'next'
-import { Inter as Geist, Roboto_Mono as Geist_Mono } from 'next/font/google'
+import { Baloo_Da_2 } from 'next/font/google'
 import { ToastContainer } from 'react-toastify'
 import './globals.css'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-})
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const balooDa2 = Baloo_Da_2({
+  variable: '--font-baloo-da-2',
   subsets: ['latin'],
 })
 
 export const metadata: Metadata = {
-  title: 'Efaz.dev | Portfolio',
+  title: 'Md. Nuruzzaman | Portfolio',
   description: 'Frontend Developer, UX Architect, and JavaScript Engineer',
 }
 
@@ -29,7 +24,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${geistSans.className} ${geistMono.variable} h-full antialiased`}
+      className={`${balooDa2.className} h-full antialiased`}
     >
       <body
         suppressHydrationWarning

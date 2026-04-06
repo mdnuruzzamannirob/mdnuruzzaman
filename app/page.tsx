@@ -19,8 +19,8 @@ export default function Home() {
         {/* 1. Title */}
         <motion.div variants={itemVariants} className="mb-8">
           <GlitchText
-            text="I'M EFAZ KHONDHOKAR"
-            className="text-2xl font-medium leading-tight tracking-[0.29em] sm:text-3xl lg:text-4xl"
+            text="I'M MD. NURUZZAMAN"
+            className=" font-semibold leading-tight tracking-[0.29em] text-4xl"
           />
         </motion.div>
 
@@ -29,17 +29,24 @@ export default function Home() {
           variants={itemVariants}
           className="mb-6 max-w-3xl leading-8 text-foreground/90"
         >
-          Your friendly neighborhood frontend developer, UX architect, and
-          JavaScript engineer. I spend my days (and often nights) painting the
-          internet canvas with{' '}
+          Your friendly neighborhood Frontend Developer and JavaScript Engineer
+          based in Dhaka, Bangladesh. I spend my days building meaningful{' '}
           <Link
             href="/projects"
             className="font-semibold text-foreground transition-all hover:opacity-70 hover:underline"
           >
             PROJECTS
           </Link>{' '}
-          and lines of code, turning zeroes and ones into immersive, interactive
-          experiences.
+          with React.js, Next.js, and TypeScript — currently working full-time
+          at{' '}
+          <Link
+            href="https://sparktech.agency"
+            target="_blank"
+            className="font-semibold text-foreground transition-all hover:opacity-70 hover:underline"
+          >
+            Sparktech Agency
+          </Link>{' '}
+          as a Full Stack Developer.
         </motion.p>
 
         {/* 3. Description 2 */}
@@ -47,25 +54,25 @@ export default function Home() {
           variants={itemVariants}
           className="mb-10 max-w-3xl leading-8 text-foreground/90"
         >
-          Bona fide photochromic{' '}
-          <Link
-            href="/about"
-            className="font-semibold text-foreground transition-all hover:opacity-70 hover:underline"
-          >
-            LENS
-          </Link>{' '}
-          enthusiast — sunlight or indoors, I&apos;ve got it covered. I tread
-          the path of minimalism, finding beauty in simplicity and order. When
-          I&apos;m not crafting beautiful web experiences, you can find me
-          reading{' '}
+          Self-taught and production-tested with 2+ years of professional
+          experience. I&apos;m actively growing into the backend with Node.js,
+          Express, and MongoDB — because I want to own the full picture, not
+          just the frontend. I write about what I learn on my{' '}
           <Link
             href="/blog"
             className="font-semibold text-foreground transition-all hover:opacity-70 hover:underline"
           >
-            ARTICLES
-          </Link>{' '}
-          or swaying to the rhythm of Pop Music & Jazz, losing myself in the
-          captivating flow of melodies. Anyways, you can{' '}
+            BLOG
+          </Link>
+          , share my work on{' '}
+          <Link
+            href="https://github.com/mdnuruzzamannirob"
+            target="_blank"
+            className="font-semibold text-foreground transition-all hover:opacity-70 hover:underline"
+          >
+            GitHub
+          </Link>
+          , and always open to new opportunities. Anyways, you can{' '}
           <Link
             href="/contact"
             className="font-semibold text-foreground transition-all hover:opacity-70 hover:underline"
